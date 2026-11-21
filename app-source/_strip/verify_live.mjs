@@ -8,8 +8,8 @@ page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()) })
 page.on('pageerror', (e) => errors.push(String(e)))
 page.on('requestfailed', (r) => failed.push(`${r.url()} ${r.failure()?.errorText}`))
 
-await page.goto(URL, { waitUntil: 'networkidle' })
-await page.waitForTimeout(800)
+await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 30000 })
+await page.waitForTimeout(1500)
 
 const subjects = await page.$$eval('nav.subject-nav button', (els) => els.map((e) => e.textContent.trim()))
 const semesters = await page.$$eval('nav.semester-nav button', (els) => els.map((e) => e.textContent.trim()))
