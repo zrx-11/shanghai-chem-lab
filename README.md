@@ -37,5 +37,5 @@ npm run preview    # 本地预览
 - 种子数据：三个学期种子文件中仅保留 `chemistry` 课程块；裁剪前原件备份在 `app-source/_strip/backup/`。
 - 课文模块：删除数学、物理、人文课文模块，化学课文优先命中化学族模板，未命中时回退到科学通用模板与通用兜底模板。
 - 视觉组件：删除数学视觉目录与物理视觉组件；化学图解组件全部保留。
-- 验证脚本：`app-source/_strip/verify_local.mjs`（目录、搜索、移动端溢出、控制台错误）与 `app-source/_strip/verify_demos.mjs`（三个互动演示逐学期渲染核验）。
+- 验证脚本：`app-source/_strip/verify_local.mjs`（本地目录、搜索、移动端溢出、控制台错误）、`app-source/_strip/verify_demos.mjs`（三个互动演示逐学期渲染核验）、`app-source/_strip/verify_live.mjs`（线上站点复验）。
 - 已知事项：`app-source/tests/lab.spec.ts` 为上游遗留的 Playwright 用例，未随本次裁剪同步更新；构建时的 chunk 体积警告在上游基线即存在。
